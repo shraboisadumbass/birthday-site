@@ -1,7 +1,17 @@
+@font-face {
+    font-family: "MyCustomFont";
+    src: url("fonts/myfont.ttf") format("truetype");
+}
+
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 html,
@@ -31,7 +41,8 @@ body {
 }
 
 .hero h1 {
-    font-size: 4rem;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 .hero button {
@@ -41,6 +52,14 @@ body {
     border-radius: 10px;
 
     cursor: pointer;
+
+    font-size: 1rem;
+
+    transition: 0.2s ease;
+}
+
+.hero button:hover {
+    transform: scale(1.05);
 }
 
 /* SCRAPBOOK SECTION */
@@ -49,16 +68,204 @@ body {
     width: 100%;
     min-height: 100vh;
 
-    overflow: hidden;
-
     background: black;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
 }
 
+/* HEADER */
+.landing-header {
+    position: absolute;
+
+    top: 5vh;
+    left: 50%;
+
+    transform: translateX(-50%) rotate(-2deg);
+
+    z-index: 10;
+
+    font-family: "MyCustomFont", sans-serif;
+    color: #ffd200;
+
+    text-align: center;
+
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+
+    line-height: 1.1;
+
+    width: 90%;
+
+    text-shadow: 0 0 18px rgba(255, 210, 0, 0.5);
+}
+
+/* IMAGE SYSTEM */
 .bg {
     width: 100%;
     height: 100vh;
 
     object-fit: cover;
+    object-position: center;
 
     display: block;
+}
+.polaroid1 {
+    position: absolute;
+
+    width: 44%;
+    max-width: 190px;
+
+    left: 6%;
+    top: 42vh;
+
+    transform: rotate(-9deg);
+
+    z-index: 12;
+
+    filter: drop-shadow(0 12px 18px rgba(0,0,0,0.38));
+    animation: float 4s ease-in-out infinite;
+}
+.polaroid2 {
+    position: absolute;
+
+    width: 38%;
+    max-width: 170px;
+
+    right: 5%;
+    bottom: 8vh;
+
+    transform: rotate(7deg);
+
+    z-index: 12;
+
+    filter: drop-shadow(0 12px 18px rgba(0,0,0,0.38));
+    animation: float2 5s ease-in-out infinite;
+}
+.polaroid3 {
+    position: absolute;
+
+    width: 34%;
+    max-width: 150px;
+
+    left: 4%;
+    bottom: 5vh;
+
+    transform: rotate(-4deg);
+
+    z-index: 11;
+
+    filter: drop-shadow(0 10px 16px rgba(0,0,0,0.35));
+}
+.chapter-title {
+    position: absolute;
+
+    top: 20vh;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 10;
+
+    background: #ead8b1;
+
+    color: #111;
+
+    padding: 10px 22px;
+
+    border-radius: 4px;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(1.8rem, 5vw, 3rem);
+
+    font-weight: 600;
+
+    font-style: normal;
+
+    letter-spacing: 0.5px;
+
+    line-height: 1;
+
+    text-align: center;
+
+    box-shadow: 0 6px 14px rgba(0,0,0,0.22);
+}
+.middle-note {
+    position: absolute;
+
+    left: 50%;
+    top: 82vh;
+
+    transform: translateX(-50%) rotate(-2deg);
+
+    width: fit-content;
+
+    max-width: 220px;
+
+    padding: 14px 18px;
+
+    background: #f6e5a8;
+
+    color: #222;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    font-size: 1.1rem;
+    line-height: 1.4;
+
+    z-index: 30;
+
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+@keyframes float {
+
+    0% {
+        transform: translateY(0px) rotate(-7deg);
+    }
+
+    50% {
+        transform: translateY(-6px) rotate(-7deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(-7deg);
+    }
+
+}
+@keyframes float2 {
+
+    0% {
+        transform: translateY(0px) rotate(7deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(7deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(7deg);
+    }
+
+}
+.est2009 {
+    position: absolute;
+
+    width: 22%;
+    max-width: 90px;
+
+    right: 8%;
+    top: 32vh;
+
+    transform: rotate(6deg);
+
+    z-index: 14;
+
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25));
 }
