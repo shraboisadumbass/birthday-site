@@ -37,7 +37,7 @@ being an absolute diva,
 borderline psychopath,
 and an absolute icon,
 
-the proof ↓:`;
+the proof:⬇`;
 
 let index = 0;
 let started = false;
@@ -79,6 +79,27 @@ function showProof() {
     if (!proof) return;
 
     setTimeout(() => {
-        proof.classList.add("show");
-    }, 400);
+
+    proof.classList.add("show");
+
+    setTimeout(() => {
+
+        const btn =
+        document.getElementById("proof-next-btn");
+
+        if (btn) {
+            btn.classList.add("show");
+        }
+
+    }, 700);
+
+}, 400);
+}
+function goThird() {
+
+    document.querySelector(".section-three")
+    .scrollIntoView({
+        behavior: "smooth"
+    });
+
 }
