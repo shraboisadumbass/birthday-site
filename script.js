@@ -29,15 +29,15 @@ function goNext() {
     }, 400);
 }
 
-const text = `Excited? So are we
+const text = `Excited? There's reason to be,
 
-excited after 17 years of you:
+after 17 years of you:
 
 being an absolute diva,
 borderline psychopath,
-and an absolute icon
+and an absolute icon,
 
-proof ↓:`;
+the proof ↓:`;
 
 let index = 0;
 let started = false;
