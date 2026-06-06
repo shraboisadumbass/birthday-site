@@ -8,11 +8,12 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
-<audio id="bg-music" loop>
-    <source src="music/song.mp3" type="audio/mp3">
-</audio>
+
 
 <body>
+    <audio id="bg-music" loop>
+    <source src="music/song.mp3" type="audio/mp3">
+</audio>
 
     <!-- INTRO SCREEN -->
     <section class="hero">
@@ -42,11 +43,26 @@
     <img src="images/photo2.png" class="polaroid2">
     <img src="images/p3.png" class="polaroid3">
     <img src="images/est.jpg" class="est2009">
-
+    <button class="next-btn" onclick="goNext()">
+    next →
+</button>
 </section>
 
     <script src="script.js"></script>
+<section class="section-two">
 
+    <div class="typing-container">
+        <h2 id="typing-text"></h2>
+
+        <!-- PROOF IMAGE (hidden initially) -->
+        <div id="proof-container">
+            <p class="proof-label">the proof ↓</p>
+            <img src="images/proof.jpg" id="proof-img" />
+        </div>
+
+    </div>
+
+</section>
 </body>
 
 </html>
