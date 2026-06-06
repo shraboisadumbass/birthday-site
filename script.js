@@ -1,9 +1,13 @@
 function openScrapbook() {
 
-    // PLAY MUSIC
+    // PLAY MUSIC (with safety for mobile autoplay restrictions)
     const music = document.getElementById("bg-music");
 
-    music.play();
+    if (music) {
+        music.play().catch(() => {
+            // ignore autoplay block errors
+        });
+    }
 
     // SCROLL TO LANDING
     document.querySelector(".landing")
@@ -19,15 +23,18 @@ function goNext() {
             behavior: "smooth"
         });
 
-    startTyping();
+    // small delay so section is in view before typing starts
+    setTimeout(() => {
+        startTyping();
+    }, 400);
 }
 
 const text = `Excited? So are we
 
 excited after 17 years of you:
 
-being an absolute diva
-borderline psychopath
+being an absolute diva,
+borderline psychopath,
 and an absolute icon
 
 proof ↓:`;
@@ -40,10 +47,12 @@ function startTyping() {
     started = true;
 
     const el = document.getElementById("typing-text");
+    if (!el) return;
+
     el.innerHTML = "";
     index = 0;
 
-    // hide proof again if revisiting
+    // reset proof
     const proof = document.getElementById("proof-container");
     if (proof) {
         proof.classList.remove("show");
@@ -54,6 +63,7 @@ function startTyping() {
 
 function type() {
     const el = document.getElementById("typing-text");
+    if (!el) return;
 
     if (index < text.length) {
         el.innerHTML += text.charAt(index);
@@ -66,10 +76,9 @@ function type() {
 
 function showProof() {
     const proof = document.getElementById("proof-container");
-
     if (!proof) return;
 
     setTimeout(() => {
         proof.classList.add("show");
-    }, 400); // slight delay for drama
+    }, 400);
 }

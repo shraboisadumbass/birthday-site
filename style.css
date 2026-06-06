@@ -297,11 +297,10 @@ body {
 }
 .next-btn {
     position: absolute;
+    bottom: 20px;
+    right: 16px;
 
-    bottom: 4vh;
-    right: 6%;
-
-    padding: 12px 22px;
+    padding: 12px 18px;
 
     border: none;
     border-radius: 10px;
@@ -313,9 +312,15 @@ body {
 
     cursor: pointer;
 
-    z-index: 100;
-
-    pointer-events: auto;
+    z-index: 1000;
+}
+@media (max-width: 600px) {
+    .next-btn {
+        bottom: 16px;
+        right: 12px;
+        font-size: 0.9rem;
+        padding: 10px 14px;
+    }
 }
 .section-two {
     min-height: 100vh;
