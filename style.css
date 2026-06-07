@@ -596,3 +596,61 @@ body {
     }
 
 }
+.fun-text {
+    margin-top: 70px;
+
+    margin-bottom: 22px;
+
+    font-size: clamp(1.5rem, 4vw, 2.4rem);
+
+    font-family: Georgia, serif;
+
+    font-weight: 600;
+
+    color: #ff2f92;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 5;
+
+    text-shadow:
+        0 0 10px rgba(255, 20, 147, 0.2);
+
+    animation: funFloat 3s ease-in-out infinite;
+}
+
+.paglami-video {
+    width: 100%;
+
+    max-width: 420px;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 14px 32px rgba(0,0,0,0.22);
+
+    position: relative;
+
+    z-index: 5;
+}
+
+/* FLOATING TEXT */
+@keyframes funFloat {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+
+}
