@@ -29,8 +29,7 @@ function goNext() {
     }, 400);
 }
 
-const text = `Excited? There's reason to be,
-
+const text = `Excited? you should be, because
 after 17 years of you:
 
 being an absolute diva,
