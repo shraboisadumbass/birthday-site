@@ -552,80 +552,152 @@ body {
 .hearts {
     position: absolute;
 
-    top: 0;
-    left: 0;
+    inset: 0;
 
     width: 100%;
     height: 100%;
 
-    pointer-events: none;
-
     overflow: hidden;
+
+    pointer-events: none;
 
     z-index: 2;
 }
 
-/* HEARTS */
+/* ALL HEARTS */
 .hearts span {
     position: absolute;
 
-    bottom: -50px;
+    color: #ff1493;
 
-    color: hotpink;
+    opacity: 0.9;
 
-    font-size: 28px;
+    text-shadow:
+        0 0 12px rgba(255,20,147,0.9),
+        0 0 24px rgba(255,105,180,0.6);
 
-    opacity: 0.7;
-
-    animation: floatHeart 8s linear infinite;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
-.hearts span:nth-child(1) { left: 10%; }
-.hearts span:nth-child(2) { left: 30%; animation-delay: 2s; }
-.hearts span:nth-child(3) { left: 50%; animation-delay: 4s; }
-.hearts span:nth-child(4) { left: 70%; animation-delay: 1s; }
-.hearts span:nth-child(5) { left: 90%; animation-delay: 3s; }
+/* FROM BOTTOM */
+.hearts .up {
+    bottom: -60px;
 
-@keyframes floatHeart {
+    animation-name: floatUp;
+}
+
+/* FROM TOP */
+.hearts .down {
+    top: -60px;
+
+    animation-name: floatDown;
+}
+
+/* FROM MIDDLE */
+.hearts .middle {
+    top: 50%;
+
+    animation-name: floatMiddle;
+
+    opacity: 0.8;
+}
+
+/* MANY RANDOM POSITIONS */
+.hearts span:nth-child(1)  { left: 4%;  font-size: 18px; animation-duration: 6s; }
+.hearts span:nth-child(2)  { left: 10%; font-size: 28px; animation-duration: 8s; animation-delay: 1s; }
+.hearts span:nth-child(3)  { left: 16%; font-size: 20px; animation-duration: 7s; animation-delay: 2s; }
+.hearts span:nth-child(4)  { left: 24%; font-size: 32px; animation-duration: 9s; }
+.hearts span:nth-child(5)  { left: 31%; font-size: 24px; animation-duration: 6s; animation-delay: 1.5s; }
+.hearts span:nth-child(6)  { left: 38%; font-size: 30px; animation-duration: 10s; }
+.hearts span:nth-child(7)  { left: 45%; font-size: 22px; animation-duration: 7s; animation-delay: 3s; }
+.hearts span:nth-child(8)  { left: 52%; font-size: 36px; animation-duration: 8s; }
+.hearts span:nth-child(9)  { left: 60%; font-size: 20px; animation-duration: 6s; animation-delay: 2s; }
+.hearts span:nth-child(10) { left: 67%; font-size: 28px; animation-duration: 9s; }
+.hearts span:nth-child(11) { left: 74%; font-size: 18px; animation-duration: 7s; animation-delay: 1s; }
+.hearts span:nth-child(12) { left: 82%; font-size: 34px; animation-duration: 10s; }
+.hearts span:nth-child(13) { left: 90%; font-size: 24px; animation-duration: 6s; animation-delay: 4s; }
+.hearts span:nth-child(14) { left: 96%; font-size: 30px; animation-duration: 8s; }
+
+/* UP */
+@keyframes floatUp {
 
     0% {
-        transform: translateY(0);
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(0.8);
+
         opacity: 0;
     }
 
-    20% {
-        opacity: 0.7;
+    10% {
+        opacity: 0.95;
     }
 
     100% {
-        transform: translateY(-120vh);
+        transform:
+            translateY(-140vh)
+            rotate(360deg)
+            scale(1.2);
+
         opacity: 0;
     }
 
 }
-.fun-text {
-    margin-top: 70px;
 
-    margin-bottom: 22px;
+/* DOWN */
+@keyframes floatDown {
 
-    font-size: clamp(1.5rem, 4vw, 2.4rem);
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(0.8);
 
-    font-family: Georgia, serif;
+        opacity: 0;
+    }
 
-    font-weight: 600;
+    10% {
+        opacity: 0.95;
+    }
 
-    color: #ff2f92;
+    100% {
+        transform:
+            translateY(140vh)
+            rotate(-360deg)
+            scale(1.2);
 
-    text-align: center;
+        opacity: 0;
+    }
 
-    position: relative;
+}
 
-    z-index: 5;
+/* MIDDLE BURST */
+@keyframes floatMiddle {
 
-    text-shadow:
-        0 0 10px rgba(255, 20, 147, 0.2);
+    0% {
+        transform:
+            translateY(0)
+            scale(0.5);
 
-    animation: funFloat 3s ease-in-out infinite;
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-100vh)
+            translateX(40px)
+            rotate(240deg)
+            scale(1.4);
+
+        opacity: 0;
+    }
+
 }
 
 .paglami-video {
