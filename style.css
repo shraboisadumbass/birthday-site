@@ -699,7 +699,28 @@ body {
     }
 
 }
+.paglami-text {
+    margin-top: 70px;
+    margin-bottom: 20px;
 
+    font-size: clamp(1.3rem, 4vw, 2rem);
+
+    font-family: Georgia, serif;
+
+    color: #ff4fa3;
+
+    line-height: 1.4;
+
+    position: relative;
+    z-index: 2;
+
+    text-shadow:
+        0 0 6px rgba(255, 79, 163, 0.6),
+        0 0 14px rgba(255, 79, 163, 0.5),
+        0 0 28px rgba(255, 79, 163, 0.4);
+
+    animation: glowPulse 2.5s ease-in-out infinite;
+}
 .paglami-video {
     width: 100%;
 
