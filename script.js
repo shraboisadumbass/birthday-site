@@ -103,3 +103,11 @@ function goThird() {
     });
 
 }
+function goFinal() {
+
+    document.querySelector(".section-four")
+    .scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
